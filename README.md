@@ -26,3 +26,25 @@ Problem as reported [here](https://askubuntu.com/questions/976300/installing-mic
 ```
 rm ~/.PlayOnLinux/wine/linux*/*/lib*/libz*
 ```
+
+### 3.WhatsApp Desktop Client
+- Add [3rd party](https://github.com/Enrico204/Whatsapp-Desktop) repo:
+```
+sudo bash -c 'cat << EOF > /etc/yum.repos.d/Enrico204_Whatsapp-Desktop.repo
+[Enrico204_Whatsapp-Desktop]
+name=Enrico204_Whatsapp-Desktop
+baseurl=https://packagecloud.io/Enrico204/Whatsapp-Desktop/el/6/$basearch
+repo_gpgcheck=1
+gpgcheck=0
+enabled=1
+gpgkey=https://packagecloud.io/Enrico204/Whatsapp-Desktop/gpgkey
+sslverify=1
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+metadata_expire=300
+EOF'
+```
+- Enable and install app:
+```
+sudo dnf config-manager --set-enabled Enrico204_Whatsapp-Desktop -y
+sudo dnf install  WhatsApp -y
+```
