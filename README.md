@@ -3,7 +3,27 @@ Tips on setting up a linux workstation /server.
 
 ## Fedora Workstation
 
-### 1. Blocking Kernel Updates
+### 1. Install VirtualBox Guest Additions for Virtual Machines
+- Insert Guest Additions DVD to virtual machine.
+- Install the following dependencies:
+```
+sudo dnf install kernel-devel-$(uname -r)
+sudo dnf install gcc make perl -y
+```
+- Install Guest Additions:
+```
+cd /run/media/$USER/VBox_GAs_5.2.8/
+sudo ./VBoxLinuxAdditions.run
+```
+- 
+### 2. RPMFusion Repository
+Run:
+```
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+```
+
+
+### 3. Blocking Kernel Updates
 - Block kernel updates from installing:
 ```
 sudo echo "exclude=kernel*" >> /etc/dnf/dnf.conf 
@@ -19,7 +39,7 @@ sudo grep -P "submenu|^menuentry" /boot/efi/EFI/fedora/grub.cfg | cut -d "'" -f2
 sudo grub2-set-default "Fedora (4.13.9-300.fc27.x86_64) 27 (Twenty Seven)
 ```
 
-### 2. Fix blank Wine applications (PlayOnLinux)
+### 4. Fix blank Wine applications (PlayOnLinux)
 Problem as reported [here](https://askubuntu.com/questions/976300/installing-microsoft-office-2010-in-ubuntu-17-10-with-playonlinux-does-not-proce):
 
 - Remove outdated libraries that ship with wine on playonlinux
@@ -27,7 +47,7 @@ Problem as reported [here](https://askubuntu.com/questions/976300/installing-mic
 rm ~/.PlayOnLinux/wine/linux*/*/lib*/libz*
 ```
 
-### 3. WhatsApp Desktop Client
+### 5. WhatsApp Desktop Client
 - Add [3rd party](https://github.com/Enrico204/Whatsapp-Desktop) repo:
 ```
 sudo bash -c 'cat << EOF > /etc/yum.repos.d/Enrico204_Whatsapp-Desktop.repo
@@ -50,13 +70,50 @@ sudo dnf install  WhatsApp -y
 ```
 
 ### 4. Remmina Remote Desktop Client
-- Add 3rd party repo:
+- Ensure RPMFusion repo is installed.
+- Install Remmina:
 ```
-sudo dnf copr enable hubbitus/remmina-next -y
+sudo dnf install remmina*
 ```
 
-- Install Reminna
+### 5. VirtualBox
+Run:
 ```
-sudo dnf upgrade --refresh 'remmina*' 'freerdp*'
-sudo dnf install remmina*
+sudo dnf install VirtualBox kernel-devel-$(uname -r) akmod-VirtualBox
+sudo akmods
+```
+### 6. ExFAT Support
+Run:
+```
+sudo dnf install fuse-exfat -y
+```
+
+### 7. Visual Studio Code
+Run:
+```
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+sudo dnf check-update
+sudo dnf install code -y
+```
+
+### 8. Telegram Desktop
+Run:
+```
+sudo dnf install telegram-desktop -y
+```
+
+### 9. Google Chrome Browser
+Run:
+```
+sudo bash -c 'cat << EOF > /etc/yum.repos.d/google-chrome.repo
+[google-chrome]
+name=google-chrome - \$basearch
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/\$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+EOF'
+
+dnf install google-chrome-stable -y
 ```
