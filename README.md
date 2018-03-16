@@ -27,7 +27,7 @@ Problem as reported [here](https://askubuntu.com/questions/976300/installing-mic
 rm ~/.PlayOnLinux/wine/linux*/*/lib*/libz*
 ```
 
-### 3.WhatsApp Desktop Client
+### 3. WhatsApp Desktop Client
 - Add [3rd party](https://github.com/Enrico204/Whatsapp-Desktop) repo:
 ```
 sudo bash -c 'cat << EOF > /etc/yum.repos.d/Enrico204_Whatsapp-Desktop.repo
@@ -47,4 +47,16 @@ EOF'
 ```
 sudo dnf config-manager --set-enabled Enrico204_Whatsapp-Desktop -y
 sudo dnf install  WhatsApp -y
+```
+
+### 4. Remmina Remote Desktop Client
+- Add 3rd party repo:
+```
+sudo dnf copr enable hubbitus/remmina-next -y
+```
+
+- Install Reminna
+```
+sudo dnf upgrade --refresh 'remmina*' 'freerdp*'
+sudo dnf install remmina*
 ```
