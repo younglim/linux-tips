@@ -15,7 +15,7 @@ sudo dnf install gcc make perl -y
 cd /run/media/$USER/VBox_GAs_5.2.8/
 sudo ./VBoxLinuxAdditions.run
 ```
-- 
+
 ### 2. RPMFusion Repository
 Run:
 ```
@@ -73,7 +73,7 @@ sudo dnf install  WhatsApp -y
 - Ensure RPMFusion repo is installed.
 - Install Remmina:
 ```
-sudo dnf install remmina*
+sudo dnf install remmina* -y
 ```
 
 ### 5. VirtualBox
