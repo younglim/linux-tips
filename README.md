@@ -40,7 +40,11 @@ sudo grub2-set-default "Fedora (4.13.9-300.fc27.x86_64) 27 (Twenty Seven)
 ```
 
 ### 4. Fix blank Wine applications (PlayOnLinux)
-Problem as reported [here](https://askubuntu.com/questions/976300/installing-microsoft-office-2010-in-ubuntu-17-10-with-playonlinux-does-not-proce):
+- Install PlayOnLinux:
+```
+sudo dnf install playonlinux -y
+```
+- Fix blank screen while running Windows applications. Problem as reported [here](https://askubuntu.com/questions/976300/installing-microsoft-office-2010-in-ubuntu-17-10-with-playonlinux-does-not-proce):
 
 - Remove outdated libraries that ship with wine on playonlinux
 ```
