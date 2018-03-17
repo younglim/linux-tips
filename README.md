@@ -23,7 +23,7 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 ```
 
 
-### 3. Blocking Kernel Updates
+### 3. Block Kernel Updates
 - Block kernel updates from installing:
 ```
 sudo echo "exclude=kernel*" >> /etc/dnf/dnf.conf 
@@ -36,7 +36,7 @@ sudo grep -P "submenu|^menuentry" /boot/efi/EFI/fedora/grub.cfg | cut -d "'" -f2
 
 - Boot the desired kernel at startup:
 ```
-sudo grub2-set-default "Fedora (4.13.9-300.fc27.x86_64) 27 (Twenty Seven)
+sudo grub2-set-default "Fedora (4.13.9-300.fc27.x86_64) 27 (Twenty Seven)"
 ```
 
 ### 4. Fix blank Wine applications (PlayOnLinux)
