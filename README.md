@@ -119,7 +119,7 @@ gpgcheck=1
 gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 EOF'
 
-dnf install google-chrome-stable -y
+sudo dnf install google-chrome-stable -y
 ```
 ### 12. Enable Intel GUC Firmware
 For Skylake, Kabylake and later chipsets:
