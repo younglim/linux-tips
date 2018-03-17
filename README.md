@@ -73,26 +73,26 @@ sudo dnf config-manager --set-enabled Enrico204_Whatsapp-Desktop -y
 sudo dnf install  WhatsApp -y
 ```
 
-### 4. Remmina Remote Desktop Client
+### 6. Remmina Remote Desktop Client
 - Ensure RPMFusion repo is installed.
 - Install Remmina:
 ```
 sudo dnf install remmina* -y
 ```
 
-### 5. VirtualBox
+### 7. VirtualBox
 Run:
 ```
 sudo dnf install VirtualBox kernel-devel-$(uname -r) akmod-VirtualBox
 sudo akmods
 ```
-### 6. ExFAT Support
+### 8. ExFAT Support
 Run:
 ```
 sudo dnf install fuse-exfat -y
 ```
 
-### 7. Visual Studio Code
+### 9. Visual Studio Code
 Run:
 ```
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -101,13 +101,13 @@ sudo dnf check-update
 sudo dnf install code -y
 ```
 
-### 8. Telegram Desktop
+### 10. Telegram Desktop
 Run:
 ```
 sudo dnf install telegram-desktop -y
 ```
 
-### 9. Google Chrome Browser
+### 11. Google Chrome Browser
 Run:
 ```
 sudo bash -c 'cat << EOF > /etc/yum.repos.d/google-chrome.repo
@@ -121,7 +121,7 @@ EOF'
 
 dnf install google-chrome-stable -y
 ```
-### 10. Enable Intel GUC Firmware
+### 12. Enable Intel GUC Firmware
 For Skylake, Kabylake and later chipsets:
 - Add the following line:
 ```
