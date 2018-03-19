@@ -141,3 +141,9 @@ sudo reboot now
 ```
 sudo cat /sys/kernel/debug/dri/0/i915_guc_load_status
 ```
+
+### 13. Fedora Mediawriter
+For writing isos to USB drive, install Mediawriter tool:
+```
+sudo dnf install mediawriter -y
+```
