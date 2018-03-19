@@ -125,12 +125,14 @@ sudo dnf install google-chrome-stable -y
 For Skylake, Kabylake and later chipsets:
 - Add the following line:
 ```
-sudo echo "options i915 enable_guc_loading=1 enable_guc_submission=1" > /etc/modprobe.d/i915.conf
+echo "options i915 enable_guc_loading=1 enable_guc_submission=1" | sudo tee /etc/modprobe.d/i915.conf
 ```
+
 - Make changes boot:
 ```
 sudo dracut --force
 ```
+
 - Reboot:
 ```
 sudo reboot now
