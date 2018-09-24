@@ -109,6 +109,11 @@ EOF'
 
 sudo dnf install google-chrome-stable -y
 ```
+For Fedora 28/27:
+```
+dnf install fedora-workstation-repositories
+dnf config-manager --set-enabled google-chrome
+```
 ### 12. Enable Intel GUC Firmware (No longer required)
 
 For Skylake, Kabylake and later chipsets:
