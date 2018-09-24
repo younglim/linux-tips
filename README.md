@@ -126,7 +126,8 @@ EOF'
 
 sudo dnf install google-chrome-stable -y
 ```
-### 12. Enable Intel GUC Firmware
+### 12. Enable Intel GUC Firmware (No longer required)
+
 For Skylake, Kabylake and later chipsets:
 - Add the following line:
 ```
