@@ -59,6 +59,7 @@ rm ~/.PlayOnLinux/wine/linux*/*/lib*/libz*
 ### 5. WhatsApp Desktop Client
 - Download Franz from:
 https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz-5.0.0-beta.18-x86_64.AppImage
+- Make the AppImage executable ```chmod +x franz-5.0.0-beta.18-x86_64.AppImage```
 
 
 ### 6. Remmina Remote Desktop Client
