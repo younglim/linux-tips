@@ -22,8 +22,13 @@ Run:
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 ```
 
+### Support for Fractional DPI
+Run:
+```
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+```
 
-### 3. Block Kernel Updates
+### 3. Block Kernel Updates (Optional)
 - Block kernel updates from installing:
 ```
 sudo echo "exclude=kernel*" >> /etc/dnf/dnf.conf 
