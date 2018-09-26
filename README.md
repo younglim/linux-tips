@@ -15,6 +15,12 @@ sudo dnf install gcc make perl -y
 cd /run/media/$USER/VBox_GAs_5.2.8/
 sudo ./VBoxLinuxAdditions.run
 ```
+- Conditions for VirtualBox to work properly
+1. Turn off SElinux
+2. Turn off Secure Boot
+3. Make sure the current user has the privileges 
+  `sudo usermod -a -G vboxusers $USER` 
+Optional: `sudo usermod -a -G vboxsf $USER` for shared folders
 
 ### 2. RPMFusion Repository
 Run:
